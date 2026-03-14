@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> ccdc Dogwalks</title>
+        <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "RiApqEIih1Zj73fZG",
+        });
+    })();
+    </script>
+    </head>
+    <style>
+        .icon {
+            text-align: center;
+        }
+        h1 {
+    text-align: center;
+}
+body {
+    background-color: #7ed957;
+    text-align: center;
+    font-family:cursive;
+    
+}
+button {
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+    background-color:#ebb457;
+    font-family:"Apple Chancery","Bradley Hand", cursive;
+    font-size: 25px;
+    width: 200px;
+    height: 60px;
+    border-radius: 50mm;
+    margin-top: 50px;
+}
+a {
+    font-size:x-large;
+}
+.dropdown2 {
+    font-size:x-large;
+}
+.nameContainer {
+    margin-top:5% ;
+    font-size:x-large;
+}
+.contactContainer {
+    margin-top:5% ;
+    font-size:x-large;
+}
+.information3 textArea{
+    width: 400px;
+    height:300px
+
+}
+
+    </style>
+    <body>
+        <a href="home.html">home</a>
+        <div class="container">
+            <h1>select time and fill out information</h1>
+        
+        <div class ="dropdown3">
+            <label for="time3">Select time here:</label>
+        <select name="time3" id="time3">
+        <option value="2-3 pm">2-3 pm</option>
+        <option value="3-4 pm">3-4 pm</option> 
+        <option value="4-5 pm">4-5 pm</option>
+        <option value="5-6 pm">5-6 pm</option> 
+        <option value="6-7 pm">6-7 pm</option>      
+        </select>
+        </div>
+        <div class="nameContainer">
+            <label for="name3">insert your name: </label>
+            <input type="text" id="name3" placeholder="John Doe">
+        </div>
+        <div class="contactContainer">
+            <label for="contact3">insert your contact information: </label>
+            <input type="text" id="contact3" placeholder="Phone/Email">
+        </div>
+        <div class="information3">
+            <textarea name="information3" id="information3" type="text" ></textarea>
+        </div>
+        <button type="button" onClick="retrieveData3()">Submit</button>
+        </div>
+        
+    </body>
+    <script>
+        function retrieveData3(){
+            var parms= {
+            message : "the day will be Saturday at "+document.getElementById("time3").value + "\n my name is " + 
+            document.getElementById("name3").value +"\n you can contact me at "+ document.getElementById("contact3").value +
+            " additional information you should know about my dog is "+ document.getElementById("information3").value,
+
+            name: document.getElementById("name3").value
+           }
+            emailjs.send("service_m0ztu9j","template_ztmy1fc",parms).then(()=>{
+                    window.location.href="sent.html";
+            });
+        }
+
+    </script>
+</html>
