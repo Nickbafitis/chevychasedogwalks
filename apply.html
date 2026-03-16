@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Apply for job</title>
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "RiApqEIih1Zj73fZG",
+      });
+   })();
+</script>
+    </head>
+    <style>
+        body {
+    background-color: hsl(102, 63%, 60%);
+    text-align: center;
+    font-family:cursive;
+}
+a{
+    font-size:x-large;
+
+}
+
+button {
+    width:125px;
+    height:50px;
+    border-radius: 50px;
+    background-color:#ebb457;
+    font-family:cursive;
+    margin-top:40px;
+    font-size:large;
+}
+    </style>
+    <body>
+        <a href="index.html">home</a>
+        <h3> Looking for a job?<br> 
+            Chevy Chase dog walks offers dog walking/sitting jobs for anyone under 18.<br>
+            Worried it might not fit your schedule?<br>
+            That shouldn't be a problem as you can choose whether or not to accept the dog walk/sitting, meaning if one day you are unavailable you can just wait for your next opportunity later that week as you will get paid per service 
+        </h3>
+            <h2> ready to apply?</h2>
+            <h3> just fill out the following form and we will contact you as soon as possible!</h3>
+
+            <label for="job"> Select which job you would like to apply for: </label>
+            <select name="job" id="job">
+                <option value="dog sitter"> dog sitter</option>
+                <option value="dog walker">dog walker</option>
+                <option value="both dog sitter and dog walker">both dog sitter/dog walker</option>
+            </select>
+             <br>
+            <label for="name">insert name: </label>
+            <input type="text" name="name" id="name" placeholder="John Doe">
+            <br>
+            
+            <label for="age">insert age: </label>
+            <input type="text" name="age" id="age"placeholder="16">
+            <br>
+            <label for="contact">Insert contact information: </label>
+            <input type="text" name="contact" id="contact" placeholder="phone/email">
+            <br>
+            <button onClick="apply()">Send</button>
+            <br>
+            <br>
+            <p> for more information pleas contact: dogwalksccdc@gmail.com</p>            
+
+    </body>
+    <script>
+        function apply(){
+            var application = {
+            name:document.getElementById("name").value,
+
+            job:document.getElementById("job").value,
+
+            age:document.getElementById("age").value,
+
+            contact:document.getElementById("contact").value,
+        }
+
+        emailjs.send("service_m0ztu9j","template_1ch069h",application).then(()=> {
+            window.location.href = "applied.html";
+        })
+        }
+        
+    </script>
+</html>
