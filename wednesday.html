@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title> ccdc Dogwalks</title>
         <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
@@ -24,7 +23,8 @@
 body {
     background-color: #7ed957;
     text-align: center;
-    font-family:"Comic Sans MS", cursive;
+    font-family:cursive;
+    
     
 }
 button {
@@ -32,7 +32,7 @@ button {
     margin-left:auto;
     margin-right:auto;
     background-color:#ebb457;
-    font-family: cursive;
+    font-family:"Apple Chancery","Bradley Hand", cursive;
     font-size: 25px;
     width: 200px;
     height: 60px;
@@ -55,30 +55,35 @@ a {
 }
 .information2 textArea{
     width: 400px;
-    height:300px
+    height:300px;
+    
 
 }
-        .container {
-width:90%;
-            margin-left:auto;
-            margin-right:auto;
-        }
+label{
+    font-size:x-large;
+}
 
     </style>
     <body>
-        <div class="container>
         <a href="index.html">home</a>
-       
+        <div class="container">
             <h1>select time and fill out information</h1>
         
         <div class ="dropdown2">
             <label for="time2">Select time here:</label>
         <select name="time2" id="time2">
-        <option value="4-5 pm">4-5 pm</option>
-        <option value="5-6 pm">5-6 pm</option> 
-        <option value="6-7 pm">6-7 pm</option>     
+        <option value="4 pm">4 pm</option>
+        <option value="5 pm">5 pm</option> 
+        <option value="6 pm">6 pm</option>     
         </select>
-        </div>
+        <br>
+        <br>
+        <label for="duration2">Select the duration of the walk</label>
+        <select name="duration2" id="duration2">
+            <option value="30 minutes">30 minutes</option>
+            <option value="60 minutes">60 minutes</option>
+        </select>
+       
         <div class="nameContainer">
             <label for="name2">insert your name: </label>
             <input type="text" id="name2" placeholder="John Doe">
@@ -87,7 +92,10 @@ width:90%;
             <label for="contact2">insert your contact information: </label>
             <input type="text" id="contact2" placeholder="Phone/Email">
         </div>
+        <br>
+        <label for="information2">Anything I should know about your dog? :</label>
         <div class="information2">
+            
             <textarea name="information2" id="information2" type="text" ></textarea>
         </div>
         <button type="button" onClick="retrieveData2()" >Submit</button>
@@ -99,7 +107,7 @@ width:90%;
            var parms= {
             message : "the day will be Wednesday at "+document.getElementById("time2").value + "\n my name is " + 
             document.getElementById("name2").value +"\n you can contact me at "+ document.getElementById("contact2").value +
-            " additional information you should know about my dog is "+ document.getElementById("information2").value,
+            " additional information you should know about my dog is "+ document.getElementById("information2").value+"\n The duration will be "+document.getElementById("duration2").value,
 
             name: document.getElementById("name2").value
            }
