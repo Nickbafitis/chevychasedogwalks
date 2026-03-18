@@ -11,9 +11,10 @@
     text-align: center;
 }
 body {
-    background-color: hsl(102, 63%, 60%);
     text-align: center;
-    font-family:cursive;
+    background-color: #fff3c2;
+    
+    font-family:"Comic Sans MS","Bradley Hand","Apple Chancery",cursive;
 }
 button {
     text-align:center;
@@ -27,15 +28,22 @@ button {
     border-radius: 50mm;
     margin-top: 50px;
 }
-a {
-    font-size:x-large;
-    
+select {
+    border: 1px solid black;
+    border-radius:8px;
 }
 a:hover{
-    color:white;
+    color:grey;
+}
+a:visited {
+color:black;
+}
+a {
+    font-size:x-large;
+    color: black;
 }
 .dropdown {
-    margin-top: 5%;
+    margin-top: 2.5%;
     font-size:x-large;
 }
 .links {
@@ -59,12 +67,15 @@ a:hover{
         <div class="container">
             <h1>Dog Walk Booking</h1>
         <div class="icon">
-        <img src="https://i.postimg.cc/0yt4md3b/Screenshot-2026-03-11-161722.png" width="300px" height="225px">
+        <img src="https://i.postimg.cc/BQ0GxJYc/Your-paragraph-text-(3).png" width="400px" height="400px">
         </div>
         <div class ="dropdown"><label for="weekday">Select weekday here:</label>
         <select name="weekDay" id="weekday">
-        <option value="Monday">Monday</option>    
+        <option value="Monday">Monday</option>
+        <option value="Tuesday">Tuesday</option>     
         <option value="Wednesday">Wednesday</option>
+        <option value="Thursday">Thursday</option> 
+        <option value="Friday">Friday</option> 
         <option valule="Saturday">Saturday</option>
         <option valule="Sunday">Sunday</option>
         </select>
@@ -79,14 +90,23 @@ function screen(){
     if (document.getElementById("weekday").value== "Monday"){
         window.location.href="monday.html";
     }
-    if (document.getElementById("weekday").value== "Wednesday"){
+    else if (document.getElementById("weekday").value== "Wednesday"){
         window.location.href="wednesday.html";
     }
-    if (document.getElementById("weekday").value== "Saturday"){
+    else if (document.getElementById("weekday").value== "Saturday"){
         window.location.href="saturday.html";
     }
-    if (document.getElementById("weekday").value== "Sunday"){
+   else  if (document.getElementById("weekday").value== "Sunday"){
         window.location.href="sunday.html";
+    }
+    else if (document.getElementById("weekday").value== "Tuesday"){
+        window.location.href="tuesday.html";
+    }
+    else if (document.getElementById("weekday").value== "Thursday"){
+        window.location.href="thursday.html";
+    }
+    else if (document.getElementById("weekday").value== "Friday"){
+        window.location.href="friday.html";
     }
 }
     </script>

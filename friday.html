@@ -21,11 +21,10 @@
     text-align: center;
 }
 body {
-   
-    text-align: center;
-    background-color: #fff3c2;
+   background-color: #fff3c2;
     
     font-family:"Comic Sans MS","Bradley Hand","Apple Chancery",cursive;
+    text-align: center;
     
     
 }
@@ -72,13 +71,13 @@ a {
     margin-top:5% ;
     font-size:x-large;
 }
-.information2 textArea{
+
+.information1 textArea{
     width: 400px;
-    height:300px;
-    
+    height:300px
 
 }
-label{
+label {
     font-size:x-large;
 }
 a:hover{
@@ -91,13 +90,13 @@ a:hover{
             <h1>select time and fill out information</h1>
         
         <div class ="dropdown2">
-            <label for="time2">Select time here:</label>
-        <select name="time2" id="time2">
+            <label for="time1">Select time here:</label>
+        <select name="time1" id="time1">
         <option value="4:00 pm">4:00 pm</option>
         <option value="4:30 pm">4:30 pm</option>
         <option value="5:00 pm">5:00 pm</option> 
         <option value="5:30 pm">5:30 pm</option>
-        <option value="6:00 pm">6:00 pm</option>   
+        <option value="6:00 pm">6:00 pm</option>  
         </select>
         <br>
         <br>
@@ -106,38 +105,41 @@ a:hover{
             <option value="30 minutes">30 minutes</option>
             <option value="60 minutes">60 minutes</option>
         </select>
-       
+        </div>
         <div class="nameContainer">
-            <label for="name2">insert your name: </label>
-            <input type="text" id="name2" placeholder="John Doe">
+            <label for="name1">insert your name: </label>
+            <input type="text" id="name1" placeholder="John Doe">
         </div>
         <div class="contactContainer">
-            <label for="contact2">insert your contact information: </label>
-            <input type="text" id="contact2" placeholder="Phone/Email">
+            <label for="contact1">insert your contact information: </label>
+            <input type="text" id="contact1" placeholder="Phone/Email">
         </div>
-        <br>
-        <label for="information2">Anything I should know about your dog? :</label>
-        <div class="information2">
-            
-            <textarea name="information2" id="information2" type="text" ></textarea>
+        <div>
+            <br>
+            <label >Anything I should know about your dog? :</label>
+            </div>
+            <div class="information1">
+            <textarea name="information1" id="information1" type="text" ></textarea>
         </div>
-        <button type="button" onClick="retrieveData2()" >Submit</button>
+        <button type="button" onClick="retrieveData1()">Submit</button>
         </div>
+
         
     </body>
     <script>
-        function retrieveData2(){
+        function retrieveData1(){
            var parms= {
-            message : "the day will be Wednesday at "+document.getElementById("time2").value + "\n my name is " + 
-            document.getElementById("name2").value +"\n you can contact me at "+ document.getElementById("contact2").value +
-            " additional information you should know about my dog is "+ document.getElementById("information2").value+"\n The duration will be "+document.getElementById("duration2").value,
+            message : "the day will be Friday at "+document.getElementById("time1").value + "\n my name is " + 
+            document.getElementById("name1").value +"\n you can contact me at "+ document.getElementById("contact1").value +
+            " additional information you should know about my dog is "+ document.getElementById("information1").value+"\n The duration will be "+document.getElementById("duration2").value,
 
-            name: document.getElementById("name2").value
+            name: document.getElementById("name1").value
            }
-            
+
             emailjs.send("service_m0ztu9j","template_ztmy1fc",parms).then(()=>{
                     window.location.href="sent.html";
             });
+            
         }
 
     </script>

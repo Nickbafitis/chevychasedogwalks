@@ -21,9 +21,11 @@
     text-align: center;
 }
 body {
-    background-color: #7ed957;
+    background-color: #fff3c2;
+    
+    font-family:"Comic Sans MS","Bradley Hand","Apple Chancery",cursive;
     text-align: center;
-    font-family:cursive;
+    
     
 }
 button {
@@ -38,8 +40,25 @@ button {
     border-radius: 50mm;
     margin-top: 50px;
 }
+a:visited {
+color:black;
+}
+select {
+    border: 1px solid black;
+    border-radius:8px;
+}
+input {
+    border: 1px solid black;
+    border-radius:8px;
+}
+textarea{
+    border: 1px solid black;
+    border-radius:25px;
+    padding:20px;
+}
 a {
     font-size:x-large;
+    color: black;
 }
 .dropdown2 {
     font-size:x-large;
@@ -62,7 +81,7 @@ label {
     font-size:x-large;
 }
 a:hover{
-    color:white;
+    color:grey;
 }
     </style>
     <body>
@@ -110,7 +129,7 @@ a:hover{
     <script>
         function retrieveData1(){
            var parms= {
-            message : "the day will be monday at "+document.getElementById("time1").value + "\n my name is " + 
+            message : "the day will be Monday at "+document.getElementById("time1").value + "\n my name is " + 
             document.getElementById("name1").value +"\n you can contact me at "+ document.getElementById("contact1").value +
             " additional information you should know about my dog is "+ document.getElementById("information1").value+"\n The duration will be "+document.getElementById("duration2").value,
 
