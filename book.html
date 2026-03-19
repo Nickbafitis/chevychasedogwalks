@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> ccdc Dogwalks</title>
+        <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "RiApqEIih1Zj73fZG",
+        });
+    })();
+    </script>
+    </head>
+    <style>
+        .icon {
+            text-align: center;
+        }
+        h1 {
+    text-align: center;
+}
+body {
+    background-color: #fff3c2;
+    
+    font-family:"Comic Sans MS","Bradley Hand","Apple Chancery",cursive;
+    text-align: center;
+    
+    
+}
+.dropdown {
+    margin-top: 2.5%;
+    font-size:x-large;
+}
+button {
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+    background-color:#ebb457;
+    font-family:"Apple Chancery","Bradley Hand", cursive;
+    font-size: 25px;
+    width: 200px;
+    height: 60px;
+    border-radius: 50mm;
+    margin-top: 50px;
+}
+a:visited {
+color:black;
+}
+select {
+    border: 1px solid black;
+    border-radius:8px;
+}
+input {
+    border: 1px solid black;
+    border-radius:8px;
+}
+textarea{
+    border: 1px solid black;
+    border-radius:25px;
+    padding:20px;
+    max-width: 80%;
+}
+a {
+    font-size:x-large;
+    color: black;
+}
+.dropdown2 {
+    font-size:x-large;
+}
+.nameContainer {
+    margin-top:5% ;
+    font-size:x-large;
+}
+.contactContainer {
+    margin-top:5% ;
+    font-size:x-large;
+}
+
+.information1 textArea{
+    width: 400px;
+    height:300px
+
+}
+label {
+    font-size:x-large;
+}
+a:hover{
+    color:grey;
+}
+.month {
+    font-size:large;
+}
+.dropdown select {
+    width:50px;
+    height:20px;
+}
+    </style>
+    <body>
+        <a href="index.html">home</a>
+        <div class="container">
+            <h1>select time and fill out information</h1>
+        <div class ="dropdown"><label for="day">Select date here(month/date):</label>
+        <select name="day" id="day">
+        <option value="01">01</option>
+        <option value="02">02</option>
+        <option value="03">03</option>
+        <option value="04">04</option>
+        <option value="05">05</option>
+        <option value="06">06</option>
+        <option value="07">07</option>
+        <option value="08">08</option>
+        <option value="09">09</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+        
+        </select>
+        
+        <label for="month"  class="month">/</label>
+        <select name = "month" id="month">
+        <option value="01">01</option>
+        <option value="02">02</option>
+        <option value="03">03</option>
+        <option value="04">04</option>
+        <option value="05">05</option>
+        <option value="06">06</option>
+        <option value="07">07</option>
+        <option value="08">08</option>
+        <option value="09">09</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        </select>
+    </div>
+    <br>
+        <div class ="dropdown2">
+            <label for="time1">Select time here:</label>
+        <select name="time1" id="time1">
+        <option value="4:00 pm">4:00 pm</option>
+        <option value="4:30 pm">4:30 pm</option>
+        <option value="5:00 pm">5:00 pm</option> 
+        <option value="5:30 pm">5:30 pm</option>
+        <option value="6:00 pm">6:00 pm</option>  
+        </select>
+        <br>
+        <br>
+        <label for="duration2">Select the duration of the walk</label>
+        <select name="duration2" id="duration2">
+            <option value="30 minutes">30 minutes</option>
+            <option value="60 minutes">60 minutes</option>
+        </select>
+        </div>
+        <div class="nameContainer">
+            <label for="name1">insert your name: </label>
+            <input type="text" id="name1" placeholder="John Doe">
+        </div>
+        <div class="contactContainer">
+            <label for="contact1">insert your contact information: </label>
+            <input type="text" id="contact1" placeholder="Phone/Email">
+        </div>
+        <div>
+            <br>
+            <label >Anything I should know about your dog? :</label>
+            
+            </div>
+            <div class="information1">
+            <textarea name="information1" id="information1" type="text" ></textarea>
+        </div>
+        <button type="button" onClick="retrieveData1()">Submit</button>
+        </div>
+
+        
+    </body>
+    <script>
+        function retrieveData1(){
+           var parms= {
+            message : "the day will be "+document.getElementById("month").value+"/"+document.getElementById("day").value+"(month/day) at "+document.getElementById("time1").value + "\n my name is " + 
+            document.getElementById("name1").value +"\n you can contact me at "+ document.getElementById("contact1").value +
+            " additional information you should know about my dog is "+ document.getElementById("information1").value+"\n The duration will be "+document.getElementById("duration2").value,
+
+            name: document.getElementById("name1").value
+           }
+
+            emailjs.send("service_m0ztu9j","template_ztmy1fc",parms).then(()=>{
+                    window.location.href="sent.html";
+            });
+            
+        }
+
+    </script>
+</html>

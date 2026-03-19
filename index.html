@@ -2,6 +2,7 @@
 <html>
     <head>
         <title> ccdc Dogwalks</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <style>
         .icon {
@@ -31,6 +32,8 @@ button {
 select {
     border: 1px solid black;
     border-radius:8px;
+    width: 50px;
+    height: 25px;
 }
 a:hover{
     color:grey;
@@ -69,45 +72,16 @@ a {
         <div class="icon">
         <img src="https://i.postimg.cc/BQ0GxJYc/Your-paragraph-text-(3).png" width="400px" height="400px">
         </div>
-        <div class ="dropdown"><label for="weekday">Select weekday here:</label>
-        <select name="weekDay" id="weekday">
-        <option value="Monday">Monday</option>
-        <option value="Tuesday">Tuesday</option>     
-        <option value="Wednesday">Wednesday</option>
-        <option value="Thursday">Thursday</option> 
-        <option value="Friday">Friday</option> 
-        <option valule="Saturday">Saturday</option>
-        <option valule="Sunday">Sunday</option>
-        </select>
-    </div>
         
-        <button type="button" onClick="screen()">Continue</button>
+        
+        <button type="button" onClick="screen()">Book</button>
         </div>
         
     </body>
+    
     <script>
 function screen(){
-    if (document.getElementById("weekday").value== "Monday"){
-        window.location.href="monday.html";
-    }
-    else if (document.getElementById("weekday").value== "Wednesday"){
-        window.location.href="wednesday.html";
-    }
-    else if (document.getElementById("weekday").value== "Saturday"){
-        window.location.href="saturday.html";
-    }
-   else  if (document.getElementById("weekday").value== "Sunday"){
-        window.location.href="sunday.html";
-    }
-    else if (document.getElementById("weekday").value== "Tuesday"){
-        window.location.href="tuesday.html";
-    }
-    else if (document.getElementById("weekday").value== "Thursday"){
-        window.location.href="thursday.html";
-    }
-    else if (document.getElementById("weekday").value== "Friday"){
-        window.location.href="friday.html";
-    }
+    window.location.href="book.html";
 }
     </script>
 </html>
