@@ -98,6 +98,10 @@ a:hover{
     width:50px;
     height:20px;
 }
+.warning {
+    color:red;
+    opacity: 0%;
+}
     </style>
     <body>
         <a href="index.html">home</a>
@@ -180,7 +184,9 @@ a:hover{
         <div class="contactContainer">
             <label for="contact1">insert your contact information: </label>
             <input type="text" id="contact1" placeholder="Phone/Email">
+            
         </div>
+        <h4 id="warning" class="warning">*please fill out contact information before proceeding*</h4>
         <div>
             <br>
             <label >Anything I should know about your dog? :</label>
@@ -196,6 +202,11 @@ a:hover{
     </body>
     <script>
         function retrieveData1(){
+            if (document.getElementById("contact1").value==""){
+                document.getElementById("warning").style.opacity = "100%";
+            }
+            else if(document.getElementById("contact1").value!=""){
+document.getElementById("warning").style.opacity = "0%";
            var parms= {
             message : "the day will be "+document.getElementById("month").value+"/"+document.getElementById("day").value+"(month/day) at "+document.getElementById("time1").value + "\n my name is " + 
             document.getElementById("name1").value +"\n you can contact me at "+ document.getElementById("contact1").value +
@@ -207,6 +218,8 @@ a:hover{
             emailjs.send("service_m0ztu9j","template_ztmy1fc",parms).then(()=>{
                     window.location.href="sent.html";
             });
+            }
+            
             
         }
 
