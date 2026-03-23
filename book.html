@@ -197,7 +197,7 @@ a:hover{
         <br>
         <br>
         <label for="duration2">Select the duration of the walk</label>
-        <select name="duration2" id="duration2">
+        <select onChange="weekDay()" name="duration2" id="duration2">
             <option value="15 minutes">15 minutes</option>
             <option value="30 minutes">30 minutes</option>
             <option value="60 minutes">60 minutes</option>
@@ -221,6 +221,7 @@ a:hover{
             <div class="information1">
             <textarea name="information1" id="information1" type="text" ></textarea>
         </div>
+        <h3 id="cost">cost: 10$</h3>
         <button type="button" onClick="retrieveData1()">Submit</button>
         </div>
 
@@ -234,7 +235,7 @@ a:hover{
             else if(document.getElementById("contact1").value!=""){
 document.getElementById("warning").style.opacity = "0%";
            var parms= {
-            message : "the day will be "+document.getElementById("month").value+"/"+document.getElementById("day").value+"(month/day) at "+document.getElementById("time1").value + "\n my name is " + 
+            message : "the day will be "+document.getElementById("month").value+"/"+document.getElementById("day").value+"(month/day) at "+document.getElementById("time2").value + "\n my name is " + 
             document.getElementById("name1").value +"\n you can contact me at "+ document.getElementById("contact1").value +
             " additional information you should know about my dog is "+ document.getElementById("information1").value+"\n The duration will be "+document.getElementById("duration2").value,
 
@@ -268,7 +269,7 @@ function weekDay(){
     <option value="7:15 pm">7:15 pm</option>
     <option value="7:30 pm">7:30 pm</option>
     <option value="7:45 pm">7:45 pm</option>
-    <option value="8:00 pm">8:00 pm</option>;
+    <option value="8:00 pm">8:00 pm</option>
     `;
     }
     else{
@@ -304,6 +305,18 @@ function weekDay(){
 <option value="9:00 pm">9:00 pm</option>
 `;
     }
+    var cost = document.getElementById("cost");
+    if (document.getElementById("duration2").value == "15 minutes"){
+        cost.innerHTML = 'cost: 10$';
+    }
+    else if (document.getElementById("duration2").value == "30 minutes"){
+        cost.innerHTML = 'cost: 20$';
+    }
+    else {
+        cost.innerHTML = 'cost: 30$';
+    }
+
 }
+
     </script>
 </html>
